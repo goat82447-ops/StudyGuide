@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM.Omnichannel Overview</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --primary: #0d6efd;
+      --primary-dark: #0a4db7;
+      --text: #1c2a39;
+      --muted: #5d7285;
+      --border: #dfe7f1;
+      --success: #1ea97c;
+      --warning: #f0b429;
+      --danger: #d94b5c;
+      --shadow: 0 8px 24px rgba(26, 52, 84, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #eef4ff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #0d6efd, #0a4db7);
+      color: white;
+      padding: 28px 30px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2.3rem;
+    }
+
+    .subtitle {
+      margin: 0;
+      font-size: 1.05rem;
+      opacity: 0.92;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: var(--primary-dark);
+    }
+
+    .pill {
+      display: inline-block;
+      background: #e8f1ff;
+      color: var(--primary-dark);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .languages {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .languages li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #edf2f8;
+    }
+
+    .languages li:last-child {
+      border-bottom: none;
+    }
+
+    .progress {
+      width: 100%;
+      height: 10px;
+      background: #edf2f8;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #0d6efd, #4ea1ff);
+      border-radius: inherit;
+    }
+
+    .section-title {
+      margin: 26px 0 14px;
+      color: var(--primary-dark);
+      font-size: 1.7rem;
+    }
+
+    .flow {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .flow-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .box {
+      min-width: 170px;
+      background: #eef5ff;
+      border: 1px solid #cfe0ff;
+      padding: 14px 16px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    .arrow {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin: 0 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f6ff;
+      color: var(--primary-dark);
+      font-size: 0.96rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pattern-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .pattern-list li {
+      margin: 8px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eafaf4;
+      color: #127d5d;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    @media (max-width: 767px) {
+      h1 { font-size: 1.8rem; }
+      .box { min-width: 130px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>CRM.Omnichannel</h1>
+      <p class="subtitle">
+        Dynamics 365 Contact Center / Omnichannel platform for managing customer conversations across voice, chat, SMS, email, and digital channels.
+      </p>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Project Summary</h2>
+        <div class="pill">Microsoft</div>
+        <div class="pill">Azure</div>
+        <div class="pill">Microservices</div>
+        <div class="pill">C#</div>
+        <p>
+          CRM.Omnichannel is a large enterprise-grade customer service platform that unifies customer communication
+          across multiple channels into a single agent experience.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Language Composition</h2>
+        <ul class="languages">
+          <li><span>C#</span><strong>64.3%</strong></li>
+          <li><span>TypeScript</span><strong>10.4%</strong></li>
+          <li><span>TSQL</span><strong>9.2%</strong></li>
+          <li><span>Python</span><strong>6.7%</strong></li>
+          <li><span>Gherkin</span><strong>2.7%</strong></li>
+          <li><span>PowerShell</span><strong>1.8%</strong></li>
+          <li><span>Other</span><strong>4.9%</strong></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Core Characteristics</h2>
+        <p><span class="badge">Scalable</span> <span class="badge">Reliable</span></p>
+        <p><span class="badge">Cloud-native</span> <span class="badge">Multi-channel</span></p>
+        <p><span class="badge">High availability</span></p>
+        <p>Built for large enterprise workloads, tenant isolation, routing efficiency, and fast response times.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Architecture at a Glance</h2>
+    <div class="flow">
+      <div class="flow-boxes">
+        <div class="box">Customer Contact</div>
+        <div class="arrow">→</div>
+        <div class="box">Channel Connector</div>
+        <div class="arrow">→</div>
+        <div class="box">Messaging / Voice Runtime</div>
+        <div class="arrow">→</div>
+        <div class="box">Assignment Engine</div>
+        <div class="arrow">→</div>
+        <div class="box">AgentBackbone</div>
+        <div class="arrow">→</div>
+        <div class="box">Agent Workspace</div>
+      </div>
+      <p style="margin-top: 18px;">
+        A customer interaction enters through a channel connector, gets processed by the runtime services,
+        is intelligently routed based on skill, availability, and priority, and is delivered to the right agent in real time.
+      </p>
+    </div>
+
+    <h2 class="section-title">Microservice Structure</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MessagingRuntime</td>
+          <td>Handles chat, SMS, social, and digital conversations.</td>
+        </tr>
+        <tr>
+          <td>TelephonyRuntime</td>
+          <td>Manages voice and telephony channels, call routing, and media workflows.</td>
+        </tr>
+        <tr>
+          <td>AgentBackbone</td>
+          <td>Provides notifications, state synchronization, background jobs, and agent experience support.</td>
+        </tr>
+        <tr>
+          <td>AssignmentEngineVNext</td>
+          <td>Routes work items to the best-fit agent based on skills, queues, and availability.</td>
+        </tr>
+        <tr>
+          <td>ProactiveEngagement</td>
+          <td>Supports outbound engagement and customer contact campaigns.</td>
+        </tr>
+        <tr>
+          <td>ConversationToQueue</td>
+          <td>Routes conversations and records into the correct queue.</td>
+        </tr>
+        <tr>
+          <td>OCProvisioning</td>
+          <td>Handles environment setup, configuration, and platform provisioning.</td>
+        </tr>
+        <tr>
+          <td>Sporch</td>
+          <td>Provides orchestration and process coordination between services.</td>
+        </tr>
+        <tr>
+          <td>MARCHServer</td>
+          <td>Supports managed or regulated communication flows and specialized scenarios.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">Architecture Style</h2>
+    <div class="grid">
+      <div class="card">
+        <h2>Microservices</h2>
+        <p>
+          Each business capability runs as an independent service with clear boundaries, deployment autonomy, and separate scaling.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Event-Driven</h2>
+        <p>
+          Services communicate through asynchronous events and messaging using Azure Service Bus, topics, and event streams.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Layered</h2>
+        <p>
+          Each microservice follows layered patterns such as API, business logic, domain processing, and infrastructure integration.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Cloud Native</h2>
+        <p>
+          The platform is designed for Azure, high availability, fault isolation, traffic sharding, and elastic scaling.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Design Patterns Used</h2>
+    <div class="card">
+      <ul class="pattern-list">
+        <li><strong>Event-driven / Publish-Subscribe:</strong> Used for asynchronous inter-service communication and reactivity to customer events.</li>
+        <li><strong>API Gateway Pattern:</strong> A service layer receives incoming requests and routes them to the appropriate microservice.</li>
+        <li><strong>CQRS:</strong> Separates read operations from write operations to optimize performance and maintainability.</li>
+        <li><strong>Event Sourcing:</strong> Represents important state changes as events for auditability and replay.</li>
+        <li><strong>State Machine:</strong> Tracks conversations through lifecycle states like Created, Queued, Assigned, and Resolved.</li>
+        <li><strong>Strategy Pattern:</strong> Supports different routing rules and assignment algorithms based on context.</li>
+        <li><strong>Factory Pattern:</strong> Creates specialized objects such as channel-specific or workstream-specific models.</li>
+        <li><strong>Builder Pattern:</strong> Constructs complex objects like workstreams, scenarios, or configurations step by step.</li>
+        <li><strong>Repository Pattern:</strong> Abstracts storage operations and keeps business logic separate from data access.</li>
+        <li><strong>Cache-Aside:</strong> Keeps frequently used config data in memory for lower latency and fewer calls to backend systems.</li>
+        <li><strong>Retry Pattern:</strong> Handles transient failures with controlled retries and backoff policies.</li>
+        <li><strong>Circuit Breaker:</strong> Protects the system from cascading failures when downstream services are unhealthy.</li>
+        <li><strong>Saga Pattern:</strong> Coordinates distributed transactions and compensates when a step fails.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">Technology Stack</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Language</td>
+          <td>C#, ASP.NET Core, .NET</td>
+        </tr>
+        <tr>
+          <td>Orchestration</td>
+          <td>Azure Service Fabric</td>
+        </tr>
+        <tr>
+          <td>Databases</td>
+          <td>Azure SQL, Cosmos DB, Dataverse</td>
+        </tr>
+        <tr>
+          <td>Messaging</td>
+          <td>Azure Service Bus, Event Hubs</td>
+        </tr>
+        <tr>
+          <td>Real-time</td>
+          <td>SignalR / Azure SignalR</td>
+        </tr>
+        <tr>
+          <td>Monitoring</td>
+          <td>Application Insights, Azure Monitor, Log Analytics</td>
+        </tr>
+        <tr>
+          <td>Security</td>
+          <td>Azure AD, token-based access, encryption, RBAC</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">Why It Matters</h2>
+    <div class="card">
+      <p>
+        This platform is designed for enterprise-scale, customer-facing operations where conversations must be routed quickly,
+        reliably, and with the correct business context. It balances performance, resilience, security, and scalability
+        while supporting multiple channels and complex work assignment logic.
+      </p>
+      <p>
+        In interview terms: <strong>“CRM.Omnichannel is a cloud-native, microservice-based, event-driven customer service platform
+        built on Azure and .NET. It supports omnichannel engagement, intelligent routing, and real-time agent coordination,
+        using patterns like CQRS, event-driven integration, retry/circuit-breaker resiliency, and state-driven workflow processing.”</strong>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
